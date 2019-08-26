@@ -13,7 +13,7 @@ namespace Server.Services
             
             return Task.FromResult(new PingResponse
             {
-                Response = "Pong",
+                Response = $"O servidor recebeu a mensagem \"{request.Message}\"",
                 Timestamp = DateTime.UtcNow.ToTimestamp()
             });
         }
