@@ -9,10 +9,12 @@ namespace Server.Services
     {
         public override Task<PingResponse> Ping(PingRequest request, ServerCallContext context)
         {
+            Console.WriteLine($"Mensagem recebida: {request.Message}");
+            
             return Task.FromResult(new PingResponse
             {
                 Response = "Pong",
-                Timestamp = Timestamp.FromDateTime(DateTime.Now)
+                Timestamp = DateTime.UtcNow.ToTimestamp()
             });
         }
     }
